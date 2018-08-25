@@ -1,0 +1,11 @@
+{
+  "name": "cctu_bot",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "OlegWock",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^6.0.0"
+  }
+}
