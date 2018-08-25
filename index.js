@@ -39,7 +39,6 @@ bot.onText(/\/replaces/, async (msg, match) => {
     const chatId = msg.chat.id;
     await downloadImage(REPLACES_URL, REPLACES_LOCAL_PATH);
 
-
     bot.sendPhoto(chatId, REPLACES_LOCAL_PATH, {contentType: 'image/jpeg'});
 });
 
