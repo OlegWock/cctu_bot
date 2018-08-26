@@ -1,0 +1,117 @@
+[
+	{
+		"name": "Олег К.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Валерчик П.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Влад Л.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Влад Т.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Влад Г.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Никита И.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Марк Б.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Дима Л.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Иван Л.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Иван Р.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Коля П.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Славик Е.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Викуся М.",
+		"last_duty": null,
+		"suitable_for_duty": false
+	},
+	{
+		"name": "Ксения М.",
+		"last_duty": null,
+		"suitable_for_duty": false
+	},
+	{
+		"name": "Рома М.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Сергей М.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Степан М.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Матвей М.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Даниил М.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Влад П.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Паша С.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Антон Т.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	},
+	{
+		"name": "Сергей Ш.",
+		"last_duty": null,
+		"suitable_for_duty": true
+	}
+]
