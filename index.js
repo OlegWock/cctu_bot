@@ -33,6 +33,7 @@ function saveStudents() {
 }
 
 function randomElement(source, criteria) {
+    return; // Wow, such a bug
     let arr;
     if (criteria) {
         arr = [];
