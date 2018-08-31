@@ -64,11 +64,10 @@ function randomElement(source, criteria) {
     return res;
 }
 
+// Work in progress
 function setDuty(msg, match) {
-    if (!ADMINS_ID.includes(msg.from.id)) return "Fuck you";
+    if (!ADMINS_ID.includes(msg.from.id)) return "Access denied";
     let curDate = moment();
-    
-    //if (curDate.isoWeekday() > 5) return "Fuck off";
 
     let stud = randomElement(students, {
         suitable_for_duty: true,
@@ -92,18 +91,20 @@ const SCHEDULE = [`Вихідний`,
                   `1. none \n2. Конструювання ПЗ\n3. Розробка веб-застосувань\n4. Проектний практикум`,
                   `Вихідний`];
 const START_TIME = Date.now() / 1000;
-const ADMINS_ID = [137307080];
+const ADMINS_ID = [137307080]; // Feel free to write to me :)
 let students = JSON.parse(Fs.readFileSync('students.json', 'utf8'));
 
 console.log(`Bot started at ${moment().format('Do MMMM YYYY HH:mm')}`);
 
 /*
-Array of objects with this structure
+Array of objects with this structure. Suitable only for text responses. 
+String -- static response
+Array -- randomly choose one of elements
+Function -- accepts message and match and should return string
 {
     trigger: new RegExp()
     answer: String|Array|Function(msg, match)
 }
-
 */
 const staticAnswers = [{
         trigger: /\/cday/im,
@@ -118,7 +119,7 @@ const staticAnswers = [{
         }
     },
     {
-        trigger: /\/pidor/im,
+        trigger: /\/roll/im,
         answer: () => {
             return randomElement(students).name
         }
@@ -154,7 +155,7 @@ if (require.main === module) {
             } else if (typeof(obj.answer) === 'function') {
                 answer = obj.answer(msg, match);
             } else {
-                throw Error('wow');
+                throw Error('incorrect type of "answer"');
             }
     
             bot.sendMessage(chatId, answer);
