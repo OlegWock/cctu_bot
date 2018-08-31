@@ -115,7 +115,9 @@ const staticAnswers = [{
     {
         trigger: /\/nday/im,
         answer: () => {
-            return SCHEDULE[(moment().day() + 1)%7];
+            let cur_day = moment().day();
+            if (cur_day > 3) cur_day = 0;
+            return SCHEDULE[cur_day];
         }
     },
     {
