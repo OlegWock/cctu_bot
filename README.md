@@ -12,7 +12,7 @@ Bot can post schedule of lessons (`/cday` for today's schedule and `/nday` for t
 
 ## How to build
 
-There is two options to build bot. First of all, you need to create `.env` file, something like this:
+There are two options to build bot. First of all, you need to create `.env` file, something like this:
 
 ```
 TELEGRAM_BOT_TOKEN=your_telegram_token_without_quotes
