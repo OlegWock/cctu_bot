@@ -15,7 +15,7 @@ async function downloadImage(url, path) {
     });
 
     response.data.pipe(Fs.createWriteStream(path));
-  
+
     return new Promise((resolve, reject) => {
         response.data.on('end', () => {
             resolve();
@@ -30,7 +30,7 @@ async function downloadImage(url, path) {
 function saveStudents() {
     Fs.writeFile('students.json', JSON.stringfy(students), {
         encoding: 'utf-8'
-    });   
+    });
 }
 
 function randomElement(source, criteria) {
@@ -60,7 +60,7 @@ function randomElement(source, criteria) {
         arr = source;
     }
     let res = arr[Math.floor(Math.random()*arr.length)];
-   
+
     return res;
 }
 
@@ -81,15 +81,15 @@ function setDuty(msg, match) {
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const REPLACES_URL = 'http://ccte.nau.edu.ua/images/Zameni.jpg';
-const REPLACES_LOCAL_PATH = Path.resolve(__dirname, 'replaces.jpg')
+const REPLACES_LOCAL_PATH = Path.resolve(__dirname, 'replaces.jpg');
 const IDK = 'Sorry, but it\'s just placeholder';
-const SCHEDULE = [`Вихідний`, // Вс
-                  `1. Фіз. вих.\n2. Основи маркетингу\n3. Соціологія\n4. Проектний практикум`, // 1 - Пн
-                  `1. Інструментальні засоби ВП\n2. Розробка веб-застосувань\n3. Основи маркетингу / Дискретна матем.`, // 2 - Вт 
-                  `1. Охорона праці\n2. Дискретна матем.\n3. Проектний практикум`, // 3 - Ср
-                  `1. Інструментальні засоби ВП\n2. Фіз. вих.\n3. Розробка веб-застосувань`, // 4 - Чт
-                  `1. none \n2. Конструювання ПЗ\n3. Розробка веб-застосувань\n4. Проектний практикум`, // 5 - Пт
-                  `Вихідний`]; // 6 - Сб
+const SCHEDULE = [`Вихідний`, // 0 - Sun
+                  `1. Економіка / Психологія\n2. Комп. графіка\n3. Дискр. математика`, // 1 - Mon
+                  `1. Конструювання ПЗ\n2. Економіка\n3. Дискр. математика`, // 2 - Tue
+                  `1. Психологія\n2. Комп. графіка\n3. Дискр. математика`, // 3 - Wed
+                  `1. Конструювання ПЗ\n2. Людинно-машинний інтерфейс  / Філософія\n3. Філософія`, // 4 - Thu
+                  `1. Економіка\n2. Людинно-машинний інтерфейс\n3. Правознавство`, // 5 - Fri
+                  `Вихідний`]; // 6 - Sat
 const START_TIME = Date.now() / 1000;
 const ADMINS_ID = [137307080]; // Feel free to write to me :)
 let students = JSON.parse(Fs.readFileSync('students.json', 'utf8'));
@@ -97,7 +97,7 @@ let students = JSON.parse(Fs.readFileSync('students.json', 'utf8'));
 console.log(`Bot started at ${moment().format('Do MMMM YYYY HH:mm')}`);
 
 /*
-Array of objects with this structure. Suitable only for text responses. 
+Array of objects with this structure. Suitable only for text responses.
 String -- static response
 Array -- randomly choose one of elements
 Function -- accepts message and match and should return string
@@ -140,7 +140,7 @@ if (require.main === module) {
         if (msg.date < START_TIME) return;
         const chatId = msg.chat.id;
         await downloadImage(REPLACES_URL, REPLACES_LOCAL_PATH);
-    
+
         bot.sendPhoto(chatId, REPLACES_LOCAL_PATH, {contentType: 'image/jpeg'});
     });
 
@@ -150,7 +150,7 @@ if (require.main === module) {
             if (msg.date < START_TIME) return;
             const chatId = msg.chat.id;
             let answer;
-    
+
             if (typeof(obj.answer) === 'string') {
                 answer = obj.answer;
             } else if (Array.isArray(obj.answer)) {
@@ -160,7 +160,7 @@ if (require.main === module) {
             } else {
                 throw Error('incorrect type of "answer"');
             }
-    
+
             bot.sendMessage(chatId, answer);
         })
     }
